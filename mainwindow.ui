@@ -93,5 +93,22 @@
   </action>
  </widget>
  <resources/>
- <connections/>
+ <connections>
+  <connection>
+   <sender>toolBar</sender>
+   <signal>actionTriggered(QAction*)</signal>
+   <receiver>MainWindow</receiver>
+   <slot>close()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>416</x>
+     <y>16</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>419</x>
+     <y>-7</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
 </ui>
