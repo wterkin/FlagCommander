@@ -34,16 +34,16 @@
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
-   <addaction name="actAddFlag"/>
+   <addaction name="act_add_flag"/>
    <addaction name="separator"/>
-   <addaction name="actEdit"/>
+   <addaction name="act_edit_flag"/>
    <addaction name="separator"/>
-   <addaction name="actDelete"/>
+   <addaction name="act_delete_flag"/>
    <addaction name="separator"/>
-   <addaction name="actExit"/>
+   <addaction name="act_exit"/>
    <addaction name="separator"/>
   </widget>
-  <action name="actAddFlag">
+  <action name="act_add_flag">
    <property name="icon">
     <iconset>
      <normaloff>../../../../../usr/share/icons/gnome/22x22/actions/add.png</normaloff>../../../../../usr/share/icons/gnome/22x22/actions/add.png</iconset>
@@ -55,7 +55,7 @@
     <string>Добавить новый флаг</string>
    </property>
   </action>
-  <action name="actEdit">
+  <action name="act_edit_flag">
    <property name="icon">
     <iconset>
      <normaloff>../../../../../usr/share/icons/gnome/22x22/apps/accessories-text-editor.png</normaloff>../../../../../usr/share/icons/gnome/22x22/apps/accessories-text-editor.png</iconset>
@@ -67,7 +67,7 @@
     <string>Редактировать флаг</string>
    </property>
   </action>
-  <action name="actDelete">
+  <action name="act_delete_flag">
    <property name="icon">
     <iconset>
      <normaloff>../../../../../usr/share/icons/gnome/22x22/actions/remove.png</normaloff>../../../../../usr/share/icons/gnome/22x22/actions/remove.png</iconset>
@@ -79,7 +79,7 @@
     <string>Удалить флаг</string>
    </property>
   </action>
-  <action name="actExit">
+  <action name="act_exit">
    <property name="icon">
     <iconset>
      <normaloff>../../../../../usr/share/icons/gnome/22x22/actions/gtk-quit.png</normaloff>../../../../../usr/share/icons/gnome/22x22/actions/gtk-quit.png</iconset>
