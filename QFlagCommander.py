@@ -12,7 +12,7 @@ except:
     from PyQt5 import QtWidgets as qt
 
 import mainwindow as fc_mainwin
-import sqlite
+import sqlite3
 
 #MAINFORM_UI = "mainform.ui"
 
@@ -25,9 +25,9 @@ class QFCMainWindow(qt.QMainWindow, fc_mainwin.Ui_MainWindow):
         self.act_add_flag.triggered.connect(
             self.__add_flag_action_triggered)
         self.act_edit_flag.triggered.connect(
-            self.__edit_flag_triggered)
+            self.__edit_flag_action_triggered)
         self.act_delete_flag.triggered.connect(
-            self.__delete_flag_triggered)
+            self.__delete_flag_action_triggered)
 
     def __add_flag_action_triggered(self):
         pass
