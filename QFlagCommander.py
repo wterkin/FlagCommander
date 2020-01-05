@@ -27,6 +27,7 @@ class QFCMainWindow(qt.QMainWindow, fc_mainwin.Ui_MainWindow):
         self.mo_timer = qtcore.QTimer()
         self.mo_timer.timeout.connect(self.__on_timer)
         self.mo_timer.start(TIMER_PERIOD)
+        self.mo_state = 0
         # *** Сигналы
         self.act_add_flag.triggered.connect(
             self.__add_flag_action_triggered)
@@ -45,8 +46,12 @@ class QFCMainWindow(qt.QMainWindow, fc_mainwin.Ui_MainWindow):
         pass
 
     def __on_timer(self):
-
-        pass
+        if self.mo_state == 0:
+                self.setWindowTitle("Ку")
+                self.mo_state = 1
+        else:
+                self.setWindowTitle("КуКу")
+                self.mo_state = 0
 
 def main():
     """Запускающая процедура."""
