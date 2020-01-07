@@ -93,28 +93,28 @@ class QFCMainWindow(widgets.QMainWindow, fc_mainwin.Ui_MainWindow):
             specified!"""
 
         ls_sql = """select   F.ftype as aflagtype
-        , F.fcondition as aflagcondition
-            , F.fevent as aflagevent
-            , F.fname as aflagname
-            , F.fkill_after_use as aflagkillafteruse
-            , T.fname as atypename
-            , T.fcode as atypecode
-            , C.fname as aconditionname
-            , C.fcode as aconditioncode
-            , E.fname as aeventname
-            , E.fvalue as aeventvalue
-   from tbl_flags F
-   inner join tbl_types T
-       on     (T.id = F.ftype)
-              and (T.fstatus>0)
-   inner join tbl_conditions C
-       on     (C.id = F.fcondition)
-              and (C.fstatus>0)
-   inner join tbl_events E
-       on     (E.id = F.fevent)
-              and (E.fstatus>0)
-   where     (F.fname = %(pflagname)s)
-         and (F.fstatus>0)"""
+                           , F.fcondition as aflagcondition
+                           , F.fevent as aflagevent
+                           , F.fname as aflagname
+                           , F.fkill_after_use as aflagkillafteruse
+                           , T.fname as atypename
+                           , T.fcode as atypecode
+                           , C.fname as aconditionname
+                           , C.fcode as aconditioncode
+                           , E.fname as aeventname
+                           , E.fvalue as aeventvalue
+                      from tbl_flags F
+                      inner join tbl_types T
+                        on     (T.id = F.ftype)
+                           and (T.fstatus>0)
+                      inner join tbl_conditions C
+                        on     (C.id = F.fcondition)
+                           and (C.fstatus>0)
+                      inner join tbl_events E
+                        on     (E.id = F.fevent)
+                           and (E.fstatus>0)
+                      where     (F.fname = %(pflagname)s)
+                            and (F.fstatus>0)"""
 
 def main():
     """Запускающая процедура."""
