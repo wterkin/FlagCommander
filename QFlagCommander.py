@@ -28,7 +28,9 @@ class QFCMainWindow(widgets.QMainWindow, fc_mainwin.Ui_MainWindow):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
+        # *** Переменные класса
         self.mo_connection = sqlite3.connect("afc2.db")
+        self.mo_existing_flags = []
         # *** Таймер
         self.mo_timer = core.QTimer()
         self.mo_timer.timeout.connect(self.__on_timer)
@@ -86,7 +88,7 @@ class QFCMainWindow(widgets.QMainWindow, fc_mainwin.Ui_MainWindow):
         for ls_flag in lo_flags:
             pass
 
-    def query_flag(self, ps_flagname):
+    def query_flag(self, ps_flagname, ps_code):
         """Возвращает данные флага."""
         assert ps_flagname is not None, """Assert:
             [QFCMainWindow.query_flag]: No <ps_flagname> parameter
@@ -114,8 +116,13 @@ class QFCMainWindow(widgets.QMainWindow, fc_mainwin.Ui_MainWindow):
                         on     (E.id = F.fevent)
                            and (E.fstatus>0)
                       where     (F.fname = %(pflagname)s)
+                            and (F.fcode = %(pcode)s)
                             and (F.fstatus>0)"""
-
+        lo_params = dict()
+        lo_params["pflagname"] = ps_flagname
+        lo_params["pcode"] = ps_code
+        lo_cursor = self.mo_connection.get_cursor()
+        lo_cursor.execute(ls_sql, lo_params)
 def main():
     """Запускающая процедура."""
     lo_app = widgets.QApplication(sys.argv)
